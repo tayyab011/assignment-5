@@ -69,3 +69,27 @@ document.getElementById("clear").addEventListener("click", () => {
    }))  
 }
 
+
+
+
+//copy functions
+
+
+let copyCount = 0; 
+const copyBtns = document.getElementsByClassName("card-copy");
+
+for (let copyBtn of copyBtns) {
+  copyBtn.addEventListener("click", () => {
+    const number = copyBtn.parentNode.parentNode.childNodes[7].innerHTML;
+
+    navigator.clipboard.writeText(number)
+     
+        alert(`Number ${number} copied to clipboard`);
+        
+       
+        copyCount++;
+        document.getElementById("copyButtons").innerHTML = copyCount;
+    
+      
+  });
+}
